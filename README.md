@@ -1,9 +1,9 @@
 # Python-Web-Scraping
 *How to use Scrapy to build your own dataset?*
 
-Wouldn't it be great if we could always find ready to use ready to use datasets anywhere around the web? After being in the Data Analytics field for some time, I have realized that plug and play scenarios are not that common. Sometimes, you just have to roll up your sleeves and build your own.
+Wouldn't it be great if we could always find ready to use ready to use datasets anywhere around the web? After being in the Data Analytics field for some time, I have realized that plug and play scenarios are not that common. Sometimes, you just have to roll up your sleeves and build your own data sources.
 
-In that sense, we will use web scraping to gather unstructured data from a website and then organize it into an analytics-ready format. To illustrate how this can be done using Scrapy, I will extract world postal code data from https://worldpostalcode.com/.
+Web scraping is the process of gathering large batches of unstructured data from a website and then organizing it into an analytics-ready format. To illustrate how this can be done using Scrapy, world postal code data will be extracted from https://worldpostalcode.com/. In this opportunity the country of interest is Vietnam, however, the concepts covered in this project can be applied to obtain data from any other country in this site or even adjusted to use on other websites.
 
 ## 1. Contents
 
