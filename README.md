@@ -18,8 +18,14 @@ Web scraping is the process of gathering large batches of unstructured data from
 The installation steps are as follows:
 
   ### 2.1 Install Anaconda:
+  
+  To install anaconda select your operating system and follow the steps outlined in the following link: [Anaconda Installation](https://docs.anaconda.com/anaconda/install/index.html)
     
   ### 2.2 Install Scrapy:
+
+  Scrapy is included as part of the Anaconda installation. However, if it does not for some reason you can install it in your Command Line/Terminal by running the following code:
+  
+  > conda install -c conda-forge scrapy
 
   ### 2.3 Create a new Scrapy Project:
 
