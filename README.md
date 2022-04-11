@@ -47,6 +47,22 @@ The installation steps are as follows:
 
   ### 2.4 Create a list of Start URL's:
   
+  The Start URL's are a list of URL's that the spider will obtain information from. In this case we will each element in the list to get data from a specific city in Vietnam. For example:
+  
+  The first URL in the list is: https://worldpostalcode.com/vietnam/bac-trung-bo/ha-tinh/cam-xuyen. Which contains the following data of interest:
+  
+  ![image](https://user-images.githubusercontent.com/60116541/162849840-8a6eb19d-d909-4513-93fb-97b8cb1a1f0d.png)
+  
+  Now, to obtain the full list of URL's to scrape we are going to use the website's site map. A site map is a list of all the pages of a web site within a domain. It is possible to access it by writing "/sitemap.xml" at the end of the website's home address:
+  
+  > https://worldpostalcode.com/sitemap.xml
+
+  This URL will open something similar to:
+  
+  ![image](https://user-images.githubusercontent.com/60116541/162851173-7ce054a5-81d1-4f9f-8bdb-67fc7adf28e3.png)
+
+  Once there, select all the text and save it as a csv file.
+  
   ### 2.5 Create Spider:
   
   ### 2.6 Run the Spider:
