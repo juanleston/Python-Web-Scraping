@@ -65,6 +65,28 @@ The installation steps are as follows:
   
   ### 2.5 Create Spider:
   
+  Before creating the spider we need to determine where the data we want to scrape lives inside the website. To do so, we are going to use Scrapy Shell which is an interactive environment that allows you to debug your scraping code without having to run the spider.
+  
+  In that sense, to access the Scrapy Shell open Command Line/Terminal and run the following code:
+  
+  Mac/Linux:
+  > scrapy shell 'url'
+  
+  Windows:
+  > scrapy shell "url"
+
+  The "url" corresponds to the website you want to scrape. In our case, we can use the first start url discussed above:
+  
+  > scrapy shell 'https://worldpostalcode.com/vietnam/bac-trung-bo/ha-tinh/cam-xuyen'
+
+  To confirm that the Shell has been opened you can run the following code:
+  
+  > view(response)
+
+  Running the code above should redirect you to the same website you have provided when you opened the Shell.
+
+  At this point, we need to select the portions of the website's HTML code that hold the data of interest. 
+  
   ### 2.6 Run the Spider:
   
   ### 2.7 Format the output data:
