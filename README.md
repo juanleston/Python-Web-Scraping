@@ -83,9 +83,7 @@ The installation steps are as follows:
   
   > view(response)
 
-  Running the code above should redirect you to the same website you have provided when you opened the Shell.
-
-  At this point, we need to select the portions of the website's HTML code that hold the data of interest. 
+  Running the code above should redirect you to the same website you have provided when you opened the Shell. At this point, we need to select the portions of the website's HTML code that hold the data of interest. 
   
   ### 2.6 Run the Spider:
   
