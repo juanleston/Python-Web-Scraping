@@ -83,7 +83,16 @@ The installation steps are as follows:
   
   > view(response)
 
-  Running the code above should redirect you to the same website you have provided when you opened the Shell. At this point, we need to select the portions of the website's HTML code that hold the data of interest. 
+  Running the code above should redirect you to the same website you have provided when you opened the Shell. At this point, we need to select the portions of the website's HTML code that hold the data of interest which we will do using Xpaths.
+  
+  The first step is to inspect the website's HTML elements to see where the data is. To open the inspection pane, right-click anywhere on the screen and select inspect:
+  
+  ![image](https://user-images.githubusercontent.com/60116541/163074698-c815c8ab-ae5d-4611-b629-31e8715827e1.png)
+
+  Doing so should open a similar pane on the right side of the screen:
+  
+  ![image](https://user-images.githubusercontent.com/60116541/163074851-f5b2d4d0-49c3-4a9c-9691-ef29d16dcd8b.png)
+
   
   ### 2.6 Run the Spider:
   
