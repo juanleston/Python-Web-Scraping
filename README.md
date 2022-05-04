@@ -150,9 +150,18 @@ The installation steps are as follows:
 
   ### 2.6 Run the Spider:
   
+  To run the spider, navigate to the directory and open Command Line/Terminal. Then, run the following code:
   
+  > scrapy crawl my_scraper_name -o name_of_output_file.extension
+
+  In this case I ran it as:
+  
+  > scrapy crawl address -o vietnam_data.json
+
+  Note that the "my_scraper_name" portion of the code has to match the name you give to the spider. Also, you are not limited to JSON file extensions for the spider output.
   
   ### 2.7 Format the output data:
+ 
 
 ## 3. Usage
 
