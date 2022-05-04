@@ -133,18 +133,24 @@ The installation steps are as follows:
 
  ![Screen Shot 2022-05-01 at 12 23 53 PM](https://user-images.githubusercontent.com/60116541/166155189-d576f281-6907-4205-b110-05d2b58daa40.png)
 
- The Xpath I used to extract these data point is:
+ The Xpath I used to extract these data points is:
 
   ![image](https://user-images.githubusercontent.com/60116541/166155441-3d4eb8de-9841-48b4-aaa9-dd9c94b48bc5.png)
 
  As you can see the code above pull the contents of the city-postal code section as a whole. The reason I chose to do it this way is that there are times where a city has multiple postal codes and the website shows that as follows:
  
  ![image](https://user-images.githubusercontent.com/60116541/166155533-8b1372a0-baea-4fee-a843-75c0c825bad7.png)
-  (Example from some cities in Taiwan)
+<br />(Example from cities of Taiwan)
   
   So, because the website uses a one (city) to many (postal codes) relationship I considered simpler to extract the whole container so that data point relationships are preserved.
+  
+  Once the Xpath scripts to extract the different data points of interest have been designed, it is time to put it all together in the Spider. In that sense, the image below shows how it is structured:
+  
+  ![image](https://user-images.githubusercontent.com/60116541/166604773-6e025542-8d1f-42b5-b275-fac4247cb7ca.png)
 
   ### 2.6 Run the Spider:
+  
+  
   
   ### 2.7 Format the output data:
 
