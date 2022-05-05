@@ -15,7 +15,7 @@ Web scraping is the process of gathering large batches of unstructured data from
 
 ## 2. Installation
 
-The installation steps are as follows:
+The installation pre-requisites to reproduce this project locally are:
 
   ### 2.1 Install Anaconda:
   
@@ -27,7 +27,11 @@ The installation steps are as follows:
   
   > conda install -c conda-forge scrapy
 
-  ### 2.3 Create a new Scrapy Project:
+## 3.Usage
+
+The steps below demonstrate in detail how to use the contents of the repository:
+
+  ### 3.1 Create a new Scrapy Project:
   
   To create a new Scrapy Project, navigate to the desired location and open the Command Line/Terminal. Once there, run the following code:
   
@@ -45,7 +49,7 @@ The installation steps are as follows:
         spiders/            directory where you have to save your spiders
   
 
-  ### 2.4 Create a list of Start URL's:
+  ### 3.2 Create a list of Start URL's:
   
   The Start URL's are a list of website addresses that the spider will crawl to extract certain data points. In this case, each element in the list holds data from a specific city in Vietnam. For example:
   
@@ -63,7 +67,7 @@ The installation steps are as follows:
 
   Once there, select all the text and save it as a csv file.
   
-  ### 2.5 Create Spider:
+  ### 3.3 Create Spider:
   
   Before creating the spider we need to determine where the specific data we want to scrape lives inside the website. To do so, we are going to use Scrapy Shell which is an interactive environment that allows you to debug your scraping code without having to run the spider.
   
@@ -148,7 +152,7 @@ The installation steps are as follows:
   
   ![image](https://user-images.githubusercontent.com/60116541/166604773-6e025542-8d1f-42b5-b275-fac4247cb7ca.png)
 
-  ### 2.6 Run the Spider:
+  ### 3.4 Run the Spider:
   
   To run the spider, navigate to the directory and open Command Line/Terminal. Then, run the following code:
   
@@ -160,18 +164,27 @@ The installation steps are as follows:
 
   Note that the "my_scraper_name" portion of the code has to match the name you give to the spider. Also, you are not limited to JSON file extensions for the spider output.
   
-  ### 2.7 Format the output data:
+  Running the spider should return a file with the following structure:
+  
+  ![image](https://user-images.githubusercontent.com/60116541/166844928-7bab781d-beb3-4a3c-9129-f7024ef458c0.png)
+
+  ### 3.5 Format the output data:
  
+ After extracting the data from the website, we need to perform some data wrangling to reshape the output into a tabular format that can be used for analytics purposes.
+ 
+ To see more of the step taking in this project check the file named "ScrappyOutputFormatting_Vietnam.py".
+ 
+## 5. Conclusion
 
-## 3. Usage
+In my opinion Web Scraping is one of those skills where the amount of effort required to build a custom solution is high, however I believe learning it is worth pursuing because oh the increased time efficiency in collecting the data. I consider that this skill is often overlooked by professionals in the area but it can be of utmost importance in non-ideal situations where the data is not readily available.
 
-## 4. Credits
+## 6. Credits
 
 Resources used to build this repository include:
 
   - https://towardsdatascience.com/using-scrapy-to-build-your-own-dataset-64ea2d7d4673
 
-## 5. License
+## 7. License
 
 ![image](https://user-images.githubusercontent.com/60116541/142733137-9ed23afb-0ee8-468e-b0f0-f90f60e70f3c.png)
 
