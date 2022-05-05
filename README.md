@@ -1,7 +1,7 @@
 # Python-Web-Scraping
 *How to use Scrapy to build your own dataset?*
 
-Wouldn't it be great if we could always find ready to use ready to use datasets anywhere around the web? After being in the Data Analytics field for some time, I have realized that plug and play scenarios are not the norm. Sometimes, you have to roll up your sleeves and build your own data sources.
+Wouldn't it be great if we could always find ready-to- use ready to use datasets anywhere around the web? After being in the Data Analytics field for some time, I have realized that plug and play scenarios are not the norm. Sometimes, you have to roll up your sleeves and build your own data sources.
 
 Web scraping is the process of gathering large batches of unstructured data from a website and then organizing it into an analytics-ready format. To illustrate how this can be done using Scrapy, World Postal Code data will be extracted from [here](https://worldpostalcode.com/). In this opportunity the country of interest is Vietnam, however, the concepts covered in this project can be applied to obtain data from any other country in this site or even adjusted to use on other websites.
 
@@ -10,12 +10,11 @@ Web scraping is the process of gathering large batches of unstructured data from
   - Sitemap.csv: contains the associated url sitemap of the website mentioned above.
   - SitemapFormattingVietnam.py: python script developed to clean and filter Vietnam's url's from the 'Sitemap.csv' file.
   - address1.py: spider built to scrape address data from the website.
-  - address2.py: spider built to scrape address data from the website.
   - ScrappyOutputFormatting_Vietnam.py: python script developed to clean and format the JSON files obtained by the spiders.
 
 ## 2. Installation
 
-The installation pre-requisites to reproduce this project locally are:
+The installation pre-requisites to reproduce this project are:
 
   ### 2.1 Install Anaconda:
   
@@ -23,13 +22,13 @@ The installation pre-requisites to reproduce this project locally are:
     
   ### 2.2 Install Scrapy:
 
-  Scrapy is included as part of the Anaconda installation. However, if it has not been installed you can install using the Command Line/Terminal of your device by running the following code:
+  Scrapy is included as part of the Anaconda installation. However, if it has not been installed you can do so by running the following code in your device's Command Line/Terminal:
   
   > conda install -c conda-forge scrapy
 
 ## 3.Usage
 
-The steps below demonstrate in detail how to use the contents of the repository:
+The steps below demonstrate how to use the contents of the repository:
 
   ### 3.1 Create a new Scrapy Project:
   
@@ -57,7 +56,7 @@ The steps below demonstrate in detail how to use the contents of the repository:
   
   ![image](https://user-images.githubusercontent.com/60116541/162849840-8a6eb19d-d909-4513-93fb-97b8cb1a1f0d.png)
   
-  Now, to obtain the full list of URL's to scrape we are going to use the website's site map. A site map is a list of all the pages of a web site within a domain. It is often possible to access it by writing "/sitemap.xml" at the end of the website's home address:
+  Now, to obtain the full list of URL's to scrape we are going to use the website's site map. A site map is a list of all the pages of a website within a domain. It is often possible to access it by writing "/sitemap.xml" at the end of the website's home address:
   
   > https://worldpostalcode.com/sitemap.xml
 
@@ -69,7 +68,7 @@ The steps below demonstrate in detail how to use the contents of the repository:
   
   ### 3.3 Create Spider:
   
-  Before creating the spider we need to determine where the specific data we want to scrape lives inside the website. To do so, we are going to use Scrapy Shell which is an interactive environment that allows you to debug your scraping code without having to run the spider.
+  Before creating the spider we need to determine where does the specific data we want to scrape live. To do so, we are going to use Scrapy Shell which is an interactive environment that allows you to debug your scraping code without having to run the spider.
   
   In that sense, to access the Scrapy Shell open Command Line/Terminal and run the following code:
   
@@ -97,19 +96,15 @@ The steps below demonstrate in detail how to use the contents of the repository:
   
   ![image](https://user-images.githubusercontent.com/60116541/163074851-f5b2d4d0-49c3-4a9c-9691-ef29d16dcd8b.png)
 
-  Once there, you can highlight the parts of the website that hold the data that you are interested in and that should subsequently highlight certain lines of the HTML code. For example:
+  Once there, you can highlight the parts of the website that hold the data that you are interested in which should subsequently highlight certain lines of the HTML code. For example:
   
   Each address in this website contains a navigation path at the top of the screen:
   
   ![image](https://user-images.githubusercontent.com/60116541/166153132-083118c2-e3f0-4aaa-a0f7-c33a8fa5bfe1.png)
   
-  By inspecting that section of the website, you can see that it hold valuable data:
+  By inspecting that section of the website, you can see that it holds valuable data:
 
   ![image](https://user-images.githubusercontent.com/60116541/166155829-92af2033-d384-47e7-ac05-a6063029e476.png)
-  
-  Next, we can open the Scrapy shell of Vietnam's first location by running the following code in the Command Line/Terminal:
-  
-  ![image](https://user-images.githubusercontent.com/60116541/166153857-c739fbad-b9f3-4d8c-b390-c2c7586ad2d3.png)
   
   In that sense, to gather the data points mentioned above we can test the following Xpaths inside Scrapy's shell to make sure we are accessing the expected content:
   
@@ -141,28 +136,28 @@ The steps below demonstrate in detail how to use the contents of the repository:
 
   ![image](https://user-images.githubusercontent.com/60116541/166155441-3d4eb8de-9841-48b4-aaa9-dd9c94b48bc5.png)
 
- As you can see the code above pull the contents of the city-postal code section as a whole. The reason I chose to do it this way is that there are times where a city has multiple postal codes and the website shows that as follows:
+ As you can see the code above pulls the contents of the city-postal code section as a whole. The reason why this route was chosen is that there are times where a city has multiple postal codes and the website shows that as follows:
  
  ![image](https://user-images.githubusercontent.com/60116541/166155533-8b1372a0-baea-4fee-a843-75c0c825bad7.png)
 <br />(Example from cities of Taiwan)
   
-  So, because the website uses a one (city) to many (postal codes) relationship I considered simpler to extract the whole container so that data point relationships are preserved.
+  As seen above, there is a one (city) to many (postal codes) relationship, therefore extracting data in this way makes it simpler to preserve data point relationships.
   
-  Once the Xpath scripts to extract the different data points of interest have been designed, it is time to put it all together in the Spider. In that sense, the image below shows how it is structured:
+  Once the Xpath scripts to extract the different data points of interest have been designed, it is time to put it all together inside the Spider. In that sense, the image below shows how it is structured:
   
   ![image](https://user-images.githubusercontent.com/60116541/166604773-6e025542-8d1f-42b5-b275-fac4247cb7ca.png)
 
   ### 3.4 Run the Spider:
   
-  To run the spider, navigate to the directory and open Command Line/Terminal. Then, run the following code:
+  To run the spider, navigate to the project's directory and open Command Line/Terminal. Then, run the following code:
   
   > scrapy crawl my_scraper_name -o name_of_output_file.extension
 
-  In this case I ran it as:
+  In this case It was ran as:
   
   > scrapy crawl address -o vietnam_data.json
 
-  Note that the "my_scraper_name" portion of the code has to match the name you give to the spider. Also, you are not limited to JSON file extensions for the spider output.
+  Note that the "my_scraper_name" portion of the code has to match the name given to the spider. Also, the output file extension is not only limited to JSON (CSV, XML and JSON Lines are other options).
   
   Running the spider should return a file with the following structure:
   
@@ -170,13 +165,13 @@ The steps below demonstrate in detail how to use the contents of the repository:
 
   ### 3.5 Format the output data:
  
- After extracting the data from the website, we need to perform some data wrangling to reshape the output into a tabular format that can be used for analytics purposes. Since the major focus of this project is on the web scraping side I will not go into much detail on subsequent steps.
+ After extracting the data from the website, we need to perform some data wrangling to reshape the output into a tabular format that can be used for analytics purposes. Since the major focus of this project is on the web scraping side of the equation no details on subsequent steps will be provided.
  
  If you want to see more of the steps taken after the data was obtained check the file named "ScrappyOutputFormatting_Vietnam.py".
  
 ## 5. Conclusion
 
-In my opinion Web Scraping is one of those skills where the amount of effort required to build a custom solution is high, however I believe learning it is worth pursuing because oh the increased time efficiency in collecting the data. I consider that this skill is often overlooked by professionals in the area but it can be of utmost importance in non-ideal situations where the data is not readily available.
+Web Scraping is one of those skills where the effort-reward is balanced because of the incresed time efficiency when building a dataset compared to doing it manually. Despite that, it is a skill that is often overlooked among analytics professionals, at least until the time you find yourself copying web data into Excel while asking yourself if there is a better way to do it.
 
 ## 6. Credits
 
