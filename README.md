@@ -170,9 +170,9 @@ The steps below demonstrate in detail how to use the contents of the repository:
 
   ### 3.5 Format the output data:
  
- After extracting the data from the website, we need to perform some data wrangling to reshape the output into a tabular format that can be used for analytics purposes.
+ After extracting the data from the website, we need to perform some data wrangling to reshape the output into a tabular format that can be used for analytics purposes. Since the major focus of this project is on the web scraping side I will not go into much detail on subsequent steps.
  
- To see more of the step taking in this project check the file named "ScrappyOutputFormatting_Vietnam.py".
+ If you want to see more of the steps taken after the data was obtained check the file named "ScrappyOutputFormatting_Vietnam.py".
  
 ## 5. Conclusion
 
